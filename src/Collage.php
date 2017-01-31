@@ -17,23 +17,23 @@ class Collage
     private $baseImage;
 
     /**
-     * @param Image $baseImage
+     * @param ImageResource $baseImage
      */
-    public function __construct(Image $baseImage)
+    public function __construct(ImageResource $baseImage)
     {
-        $this->baseImage = (new ImageManager())->make($baseImage->getResource());
+        $this->baseImage = $baseImage->getImage();
     }
 
     /**
-     * @param Image $image
+     * @param ImageResource $image
      * @param int $x
      * @param int $y
      *
      * @return Collage
      */
-    public function addImage(Image $image, int $x = 0, int $y = 0): self
+    public function addImage(ImageResource $image, int $x = 0, int $y = 0): self
     {
-        $this->baseImage->insert($image->getResource(), 'top-left', $x, $y);
+        $this->baseImage->insert($image->getImage(), 'top-left', $x, $y);
 
         return $this;
     }

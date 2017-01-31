@@ -3,35 +3,59 @@
 namespace Simplon\Collage;
 
 use GDText\Box;
+use Intervention\Image\Image;
+use Intervention\Image\ImageManager;
 
 /**
  * @package Simplon\Collage
  */
-class Image
+class ImageResource
 {
     /**
-     * @var string
+     * @var resource
      */
-    private $source;
+    private $resource;
+    /**
+     * @var Image
+     */
+    private $image;
 
     /**
      * @param string $source
      */
     public function __construct(string $source)
     {
-        $this->source = imagecreatefromstring(
+        $this->resource = imagecreatefromstring(
             file_get_contents($source)
         );
+
+        $this->image = (new ImageManager())->make($this->resource);
+    }
+
+    /**
+     * @return resource
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * @return Image
+     */
+    public function getImage(): Image
+    {
+        return $this->image;
     }
 
     /**
      * @param TextBox $textBox
      *
-     * @return Image
+     * @return ImageResource
      */
     public function addTextBox(TextBox $textBox): self
     {
-        $textbox = new Box($this->source);
+        $textbox = new Box($this->resource);
         $textbox->setFontFace($textBox->getPathFontFace());
         $textbox->setFontSize($textBox->getFontSize());
         $textbox->setFontColor(Colors::hexToRgb($textBox->getFontColorHex()));
@@ -40,13 +64,5 @@ class Image
         $textbox->draw($textBox->getText());
 
         return $this;
-    }
-
-    /**
-     * @return resource
-     */
-    public function getResource()
-    {
-        return $this->source;
     }
 }

@@ -3,14 +3,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Simplon\Collage\Collage;
-use Simplon\Collage\Image;
+use Simplon\Collage\ImageResource;
 use Simplon\Collage\TextBox;
 
 //
 // base image
 //
 
-$baseImage = (new Image(__DIR__ . '/base-image.jpg'))->addTextBox(
+$baseImage = (new ImageResource(__DIR__ . '/base-image.jpg'))->addTextBox(
     (new TextBox('Foo bar text'))
         ->setSize(400, 200)
         ->setPos(50, 420)
@@ -20,7 +20,7 @@ $baseImage = (new Image(__DIR__ . '/base-image.jpg'))->addTextBox(
 // profile
 //
 
-$profileImage = new Image(__DIR__ . '/profile-image.png');
+$profileImage = new ImageResource(__DIR__ . '/profile-image.png');
 
 //
 // create collage

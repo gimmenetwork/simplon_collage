@@ -97,7 +97,7 @@
             "suggest": {
                 "ext-gd": "to use GD library based image processing.",
                 "ext-imagick": "to use Imagick based image processing.",
-                "intervention/imagecache": "Caching extension for the Intervention Image library"
+                "intervention/imagecache": "Caching extension for the Intervention ImageResource library"
             },
             "type": "library",
             "extra": {
@@ -107,7 +107,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Intervention\\Image\\": "src/Intervention/Image"
+                    "Intervention\\ImageResource\\": "src/Intervention/ImageResource"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -121,7 +121,7 @@
                     "homepage": "http://olivervogel.net/"
                 }
             ],
-            "description": "Image handling and manipulation library with support for Laravel integration",
+            "description": "ImageResource handling and manipulation library with support for Laravel integration",
             "homepage": "http://image.intervention.io/",
             "keywords": [
                 "gd",
