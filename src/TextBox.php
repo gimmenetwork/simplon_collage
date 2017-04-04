@@ -30,11 +30,11 @@ class TextBox
     /**
      * @var int
      */
-    private $width = 100;
+    private $width;
     /**
      * @var int
      */
-    private $height = 50;
+    private $height;
     /**
      * @var string
      */
@@ -147,17 +147,17 @@ class TextBox
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getWidth(): int
+    public function getWidth(): ?int
     {
         return $this->width;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->height;
     }
