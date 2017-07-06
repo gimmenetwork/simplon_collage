@@ -7,6 +7,13 @@ namespace Simplon\Collage;
  */
 class TextBox
 {
+    const HALIGN_LEFT = 'left';
+    const HALIGN_CENTER = 'center';
+    const HALIGN_RIGHT = 'right';
+    const VALIGN_TOP = 'top';
+    const VALIGN_CENTER = 'center';
+    const VALIGN_BOTTOM = 'bottom';
+
     /**
      * @var string
      */
@@ -50,10 +57,11 @@ class TextBox
 
     /**
      * @param string $text
+     * @param array $params
      */
-    function __construct(string $text)
+    function __construct(string $text, array $params = [])
     {
-        $this->text = $text;
+        $this->text = $this->renderTextWithParams($text, $params);
     }
 
     /**
@@ -222,5 +230,24 @@ class TextBox
     public function getText(): string
     {
         return $this->text;
+    }
+
+    /**
+     * @param string $text
+     * @param array $params
+     *
+     * @return string
+     */
+    private function renderTextWithParams(string $text, array $params): string
+    {
+        if (!empty($params))
+        {
+            foreach ($params as $placeholder => $value)
+            {
+                $text = str_replace('{' . $placeholder . '}', $value, $text);
+            }
+        }
+
+        return $text;
     }
 }
