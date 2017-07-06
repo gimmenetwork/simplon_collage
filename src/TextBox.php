@@ -65,6 +65,18 @@ class TextBox
     }
 
     /**
+     * @param callable $callable
+     *
+     * @return TextBox
+     */
+    public function transformText(callable $callable): self
+    {
+        $this->text = $callable($this->text);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getPathFontFace(): string
