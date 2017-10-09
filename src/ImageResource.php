@@ -14,13 +14,13 @@ class ImageResource extends Resource
      */
     public function __construct($source)
     {
-        $this->resource = imagecreatefromstring(
-            file_get_contents($source)
-        );
+        $resoure = file_get_contents($source);
 
-        if ($this->resource === false)
+        if ($resoure === false)
         {
             throw new \Exception('Could not fetch "' . $source . '"');
         }
+
+        $this->resource = imagecreatefromstring($resoure);
     }
 }
