@@ -6,9 +6,6 @@ use GDText\Box;
 use Intervention\Image\Image;
 use Intervention\Image\ImageManager;
 
-/**
- * @package Simplon\Collage
- */
 abstract class Resource implements ResourceInterface
 {
     /**

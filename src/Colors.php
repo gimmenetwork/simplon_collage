@@ -4,9 +4,6 @@ namespace Simplon\Collage;
 
 use GDText\Color;
 
-/**
- * @package Simplon\Collage
- */
 class Colors
 {
     /**

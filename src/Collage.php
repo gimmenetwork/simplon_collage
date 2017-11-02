@@ -5,10 +5,6 @@ namespace Simplon\Collage;
 use Intervention\Image\ImageManager;
 use Psr\Http\Message\StreamInterface;
 
-/**
- * Class Collage
- * @package Simplon\Collage
- */
 class Collage
 {
     /**

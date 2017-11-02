@@ -4,9 +4,6 @@ namespace Simplon\Collage;
 
 use Intervention\Image\Image;
 
-/**
- * @package Simplon\Collage
- */
 interface ResourceInterface
 {
     /**

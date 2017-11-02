@@ -2,9 +2,6 @@
 
 namespace Simplon\Collage;
 
-/**
- * @package Simplon\Collage
- */
 class RectangleResource extends Resource
 {
     /**
