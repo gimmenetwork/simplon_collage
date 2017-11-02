@@ -88,4 +88,19 @@ abstract class Resource implements ResourceInterface
         return $this;
     }
 
+    /**
+     * @param string $source
+     *
+     * @return string
+     * @throws \Exception
+     */
+    protected function fetchSourceContents(string $source): string
+    {
+        if ($data = @file_get_contents($source))
+        {
+            return $data;
+        }
+
+        throw new \Exception('Source does not seem to exist: ' . $source);
+    }
 }
