@@ -11,9 +11,11 @@ use Simplon\Collage\TextBox;
 //
 
 $baseImage = (new ImageResource(__DIR__ . '/base-image.jpg'))->addTextBox(
-    (new TextBox('Foo bar text'))
+    (new TextBox('你能打败我的成绩么？点这里！'))
+        ->setPathFontFace(__DIR__ . '/fonts/SourceHanSerifTC-Regular.woff')
         ->setSize(400, 200)
-        ->setPos(50, 420)
+        ->setPos(180, 460)
+        ->setAngle(15)
 );
 
 //

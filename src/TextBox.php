@@ -51,6 +51,10 @@ class TextBox
      * @var string
      */
     private $text;
+    /**
+     * @var float
+     */
+    private $angle = 0;
 
     /**
      * @param string $text
@@ -229,6 +233,26 @@ class TextBox
     public function setTextVerticalAlign(string $textVerticalAlign)
     {
         $this->textVerticalAlign = $textVerticalAlign;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getAngle(): float
+    {
+        return $this->angle;
+    }
+
+    /**
+     * @param float $angle
+     *
+     * @return TextBox
+     */
+    public function setAngle(float $angle): TextBox
+    {
+        $this->angle = $angle;
 
         return $this;
     }

@@ -2,7 +2,6 @@
 
 namespace Simplon\Collage;
 
-use GDText\Box;
 use Intervention\Image\Image;
 use Intervention\Image\ImageManager;
 
@@ -52,13 +51,14 @@ abstract class Resource implements ResourceInterface
             $textBox->setSize($this->getImage()->getWidth(), $this->getImage()->getHeight());
         }
 
-        $textbox = new Box($this->resource);
-        $textbox->setFontFace($textBox->getPathFontFace());
-        $textbox->setFontSize($textBox->getFontSize());
-        $textbox->setFontColor(Colors::hexToRgb($textBox->getFontColorHex()));
-        $textbox->setBox($textBox->getPosX(), $textBox->getPosY(), $textBox->getWidth(), $textBox->getHeight());
-        $textbox->setTextAlign($textBox->getTextHorizontalAlign(), $textBox->getTextVerticalAlign());
-        $textbox->draw($textBox->getText());
+        $box = new Box($this->resource);
+        $box->setFontFace($textBox->getPathFontFace());
+        $box->setFontSize($textBox->getFontSize());
+        $box->setFontColor(Colors::hexToRgb($textBox->getFontColorHex()));
+        $box->setBox($textBox->getPosX(), $textBox->getPosY(), $textBox->getWidth(), $textBox->getHeight());
+        $box->setTextAlign($textBox->getTextHorizontalAlign(), $textBox->getTextVerticalAlign());
+        $box->setAngle($textBox->getAngle());
+        $box->draw($textBox->getText());
 
         return $this;
     }
