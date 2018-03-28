@@ -96,7 +96,10 @@ abstract class Resource implements ResourceInterface
      */
     protected function fetchSourceContents(string $source): string
     {
-        if ($data = @file_get_contents($source))
+        $options  = ['http' => ['user_agent' => 'curl/7.59.0']];
+        $context  = stream_context_create($options);
+
+        if ($data = @file_get_contents($source, false, $context))
         {
             return $data;
         }
