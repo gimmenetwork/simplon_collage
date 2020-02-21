@@ -24,11 +24,11 @@ class TextBox
      */
     private $fontColorHex = '#000000';
     /**
-     * @var int
+     * @var float
      */
     private $posX = 0;
     /**
-     * @var int
+     * @var float
      */
     private $posY = 0;
     /**
