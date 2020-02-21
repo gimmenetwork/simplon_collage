@@ -138,28 +138,28 @@ class TextBox
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getPosX(): int
+    public function getPosX(): float
     {
         return $this->posX;
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getPosY(): int
+    public function getPosY(): float
     {
         return $this->posY;
     }
 
     /**
-     * @param int $x
-     * @param int $y
+     * @param float $x
+     * @param float $y
      *
      * @return static
      */
-    public function setPos(int $x, int $y)
+    public function setPos(float $x, float $y)
     {
         $this->posX = $x;
         $this->posY = $y;
