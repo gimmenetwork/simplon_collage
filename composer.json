@@ -1,6 +1,6 @@
 {
-  "name": "simplon/collage",
-  "description": "Abstraction for the creation of image collages incl. texts w/ bounding boxes",
+  "name": "gimmenetwork/simplon_collage",
+  "description": "[FORK] Abstraction for the creation of image collages incl. texts w/ bounding boxes",
   "homepage": "https://github.com/fightbulc/simplon_collage",
   "type": "library",
   "keywords": [
